@@ -111,7 +111,7 @@
                         <configuration>
                             <target>
                                 <copy todir="${project.build.directory}/classes/public">
-                                    <fileset dir="${project.basedir}/frontend/dist" />
+                                    <fileset dir="${project.basedir}/frontend/dist/angular-todoapp" />
                                 </copy>
                             </target>
                         </configuration>
