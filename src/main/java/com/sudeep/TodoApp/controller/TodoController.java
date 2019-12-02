@@ -2,6 +2,7 @@ package com.sudeep.TodoApp.controller;
 
 
 import java.net.URI;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Optional;
 
@@ -28,8 +29,10 @@ public class TodoController {
     TodoService todoService;
 
     @RequestMapping(value = "/hello", method = RequestMethod.GET)
-    public String helloWorld() {
-        return "hello";
+    public LinkedHashMap<String,String> helloWorld() {
+        LinkedHashMap<String,String> response=new LinkedHashMap<>();
+        response.put("message", "hello");
+        return response;
     }
 
     @RequestMapping(value = "/basicauth", method = RequestMethod.GET)

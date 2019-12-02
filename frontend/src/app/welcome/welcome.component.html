@@ -5,5 +5,11 @@
 <div class="container">
 <h1> Welcome {{name}}</h1>
   you can manage your todos <a routerLink="/todos"> here</a>
+
+  <br>
+  <button (click)="serviceTest()" class="btn btn-success">Test Service </button>
+  <br >
+
+  <p *ngIf="welcomeMessage">{{welcomeMessage}}<p>
 </div>
 
