@@ -49,6 +49,22 @@ export class BasicAuthenticationService {
       )
     )
   }
+
+
+
+    executeJWTAuthenticationService(username, password) {
+    return this.http.post<any>(`${API_URL}/authenticate`,{username,password}).pipe(
+      map(
+        data => {
+          sessionStorage.setItem('authenticatedUser', username)
+          sessionStorage.setItem('token', `Bearer ${data.token}`)
+          return data
+        }
+      )
+    )
+  }
+
+
 }
 export class AuthenticationBean {
   constructor(public message: string) { }
