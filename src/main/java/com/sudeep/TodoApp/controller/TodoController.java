@@ -36,8 +36,10 @@ public class TodoController {
     }
 
     @RequestMapping(value = "/basicauth", method = RequestMethod.GET)
-    public String basicauth() {
-        return "authenticated";
+    public LinkedHashMap<String,String> basicauth() {
+        LinkedHashMap<String,String> response=new LinkedHashMap<>();
+        response.put("message", "authenticated");
+        return response;
     }
 
     @GetMapping("/users/{username}/todos")
